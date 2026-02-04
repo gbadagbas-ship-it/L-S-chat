@@ -24,7 +24,7 @@ a{
     border-right: 1px solid #eee;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
-    /* border-bottom-right-radius: 50px; */
+    border-bottom-right-radius: 50px;
 }
 .app > .screen {
     display: none;
@@ -177,11 +177,11 @@ a{
     border: none;
     border-color: #eee;
     cursor: pointer;
-    /* border-bottom-right-radius: 7px; */
+    border-bottom-right-radius: 30px;
 }
 
 /* Styles pour le système de reply type WhatsApp */
-/* .reply-preview {
+ /* .reply-preview {
     width: 100%;
     padding: 8px 12px;
     background: linear-gradient(to right, rgba(0, 150, 136, 0.15), rgba(0, 188, 212, 0.05));
@@ -191,10 +191,10 @@ a{
     align-items: center;
     margin-bottom: 0;
     animation: slideUp 0.3s ease-out;
-}
+} */
 
-@keyframes slideUp {
-    from {
+/* @keyframes slideUp { */
+    /* from {
         opacity: 0;
         transform: translateY(20px);
     }
@@ -288,7 +288,7 @@ a{
     color: #333;
     word-wrap: break-word;
     line-height: 1.3;
-} */
+}  */
 
 
 
@@ -306,6 +306,7 @@ a{
     transition: transform 0.3s ease;
     max-width: 600px;
     margin: 0 auto;
+    border-bottom-right-radius: 30px;
 }
 
 .reply-preview {
@@ -350,4 +351,79 @@ a{
     display: flex;
     flex-direction: column;
     height: 100%;
+}
+
+
+
+
+.reply-preview {
+    width: 100%;
+    padding: 12px 50px 12px 12px; /* Espace à droite pour la croix */
+    background: linear-gradient(to right, rgba(0, 150, 136, 0.15), rgba(0, 188, 212, 0.05));
+    border-left: 4px solid skyblue;
+    display: none;
+    align-items: center;
+    box-sizing: border-box;
+    margin-bottom: 8px;
+    min-height: 60px;
+    position: relative; /* Important pour le positionnement absolu enfant */
+}
+
+.reply-preview-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    gap: 4px;
+    overflow: hidden;
+    border-left: 3px solid red;
+}
+
+.reply-preview-author {
+    font-size: 12px;
+    font-weight: 600;
+    color: #00897b;
+}
+
+.reply-preview-text {
+    font-size: 13px;
+    color: #555;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+.reply-close-btn {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: #999;
+    font-size: 22px;
+    cursor: pointer;
+    padding: 8px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s, color 0.2s;
+    z-index: 2;
+}
+
+.reply-close-btn:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: #555;
+}
+
+.reply-box {
+    padding: 8px 10px;
+    border-left: 3px solid red;
+    background: rgba(14, 13, 13, 0.226);
+    border-radius: 4px;
+    margin-bottom: 8px;
 }
