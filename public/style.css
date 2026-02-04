@@ -335,38 +335,49 @@ a{
     background: #ffffff69;
     border-left: 1px solid #eee;
     border-right: 1px solid #eee;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     flex-direction: column;
-}
-
-.chat-screen .messages {
-    width: 100%;
-    flex: 1;
-    background: #f5f5f5;
-    overflow: auto;
-    padding-bottom: 50px; /* Espace pour le typebox */
 }
 
 .chat-screen {
     display: flex;
     flex-direction: column;
     height: 100%;
+    width: 100%;
 }
 
+.chat-screen .messages {
+    flex: 1;
+    overflow: auto;
+    background: #f5f5f5;
+    padding-bottom: 60px; /* Espace pour le typebox + reply-preview */
+}
 
-
+.chat-screen .typebox {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    background: #f5f5f5;
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
+    border-top: 1px solid #ddd;
+}
 
 .reply-preview {
     width: 100%;
-    padding: 12px 50px 12px 12px; /* Espace à droite pour la croix */
+    padding: 12px 50px 12px 12px;
     background: linear-gradient(to right, rgba(0, 150, 136, 0.15), rgba(0, 188, 212, 0.05));
     border-left: 4px solid skyblue;
     display: none;
     align-items: center;
     box-sizing: border-box;
-    margin-bottom: 8px;
+    position: sticky;
+    bottom: 50px; /* Positionné juste au-dessus du typebox */
+    z-index: 9;
     min-height: 60px;
-    position: relative; /* Important pour le positionnement absolu enfant */
 }
 
 .reply-preview-content {
@@ -376,7 +387,6 @@ a{
     flex: 1;
     gap: 4px;
     overflow: hidden;
-    border-left: 3px solid red;
 }
 
 .reply-preview-author {
@@ -413,6 +423,16 @@ a{
     border-radius: 50%;
     transition: background-color 0.2s, color 0.2s;
     z-index: 2;
+}
+
+.reply-close-btn:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: #555;
+}
+
+/* Pour s'assurer que les messages ont assez d'espace en bas */
+.chat-screen .messages {
+    padding-bottom: 60px;
 }
 
 .reply-close-btn:hover {
